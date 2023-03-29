@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Current Times</title>
+</head>
+<body>
+  <h1>Current Times</h1>
+  <ul>
+    <li>Cairo: <span id="cairo-time"></span></li>
+    <li>London: <span id="london-time"></span></li>
+    <li>Turkey: <span id="turkey-time"></span></li>
+    <li>Dubai: <span id="dubai-time"></span></li>
+  </ul>
+
+  <script>
+    function updateTime() {
+      const cairoTime = new Date().toLocaleTimeString('en-GB', {timeZone: 'Africa/Cairo'});
+      const londonTime = new Date().toLocaleTimeString('en-GB', {timeZone: 'Europe/London'});
+      const turkeyTime = new Date().toLocaleTimeString('en-GB', {timeZone: 'Europe/Istanbul'});
+      const dubaiTime = new Date().toLocaleTimeString('en-GB', {timeZone: 'Asia/Dubai'});
+      
+      document.getElementById('cairo-time').textContent = cairoTime;
+      document.getElementById('london-time').textContent = londonTime;
+      document.getElementById('turkey-time').textContent = turkeyTime;
+      document.getElementById('dubai-time').textContent = dubaiTime;
+    }
+    
+    // update the times every second
+    setInterval(updateTime, 1000);
+  </script>
+</body>
+</html>
